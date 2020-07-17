@@ -6,7 +6,8 @@ ga(
             form.vals({
                 'GATRACKID__c':gaTrackID,
                 'GACLIENTID__c':gaClientID
-            });
+            })
+            console.log('Values populated')
         })
     }
     var gaTrackID = ga.getAll()[0].get('trackingId')
