@@ -16,7 +16,7 @@ ga(
         })
     }
     var tracker = ga.getAll()[0]
-        if (tracker.includes('trackingId') && tracker.includes('clientID')) {
+        if (tracker && tracker.includes('trackingId') && tracker.includes('clientID')) {
             var gaTrackID = tracker.get('trackingId')
             var gaClientID = tracker.get('clientId')
         } else {
