@@ -1,5 +1,4 @@
-ga(
-(function() { 
+ga(function() { 
     function addValuesToMarketoForm() {
         MktoForms2.whenReady( function(form) {
             console.log('Marketo form #'+form.getFormElem()[0].id+' found.')	
@@ -32,4 +31,4 @@ ga(
         }
     }
     initialize()
- })())
+ });
