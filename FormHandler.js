@@ -3,7 +3,7 @@ ga(function() {
         MktoForms2.whenReady( function(form) {
             console.log('Marketo form #'+form.getFormElem()[0].id+' found.')	
             if (gaTrackID==null || gaClientID==null) {
-                console.error('Missing GA Tracker ID or GA Client ID');
+                console.error('TrackID and Client ID missing; cannot add values');
                 return;
             } else {
                 form.vals({
@@ -15,12 +15,14 @@ ga(function() {
         })
     }
     var tracker = ga.getAll()[0]
-        if (tracker && tracker.includes('trackingId') && tracker.includes('clientID')) {
+        if (tracker) {
             var gaTrackID = tracker.get('trackingId')
             var gaClientID = tracker.get('clientId')
+            console.log('Tracker found')
         } else {
             var gaTrackID = null
             var gaClientID = null
+            console.log('Tracker not found')
         }
     function initialize() {
         if(typeof MktoForms2 !== 'undefined') {
